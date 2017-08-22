@@ -18,7 +18,7 @@ export class FilterByPipe implements PipeTransform {
     let newArray = [];
     for (let i = 0; i < items.length; i++) {
       for (let j = 0; j < props.length; j++) {
-        console.log(items[i][j])// .toString().toLowerCase() !== -1);
+        newArray.push(items[i][props[j]].toString().toLowerCase() !== -1);
       }
     }
     console.log(newArray);

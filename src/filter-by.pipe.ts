@@ -24,13 +24,10 @@ export class FilterByPipe implements PipeTransform {
           check++;
         }
       }
-      console.log(check);
       if (check > 0) {
         newArray.push(items[i]);
       }
     }
-    console.log(newArray);
-   // return items;
     return newArray;
   }
 }

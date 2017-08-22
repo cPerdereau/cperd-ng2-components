@@ -2,21 +2,21 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }              from '@angular/platform-browser';
 import { DebugElement }    from '@angular/core';
 
-import { SampleComponent } from './array.component';
+import { ArrayComponent } from './ArrayComponent/array.component';
 
 describe('SampleComponent', () => {
 
-  let comp:    SampleComponent;
-  let fixture: ComponentFixture<SampleComponent>;
+  let comp:    ArrayComponent;
+  let fixture: ComponentFixture<ArrayComponent>;
   let de:      DebugElement;
   let el:      HTMLElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ SampleComponent ], // declare the test component
+      declarations: [ ArrayComponent ], // declare the test component
     });
 
-    fixture = TestBed.createComponent(SampleComponent);
+    fixture = TestBed.createComponent(ArrayComponent);
 
     comp = fixture.componentInstance; // BannerComponent test instance
 

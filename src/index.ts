@@ -1,13 +1,15 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArrayComponent } from './array.component';
+import { ArrayComponent } from './ArrayComponent/array.component';
+import { SearchBarComponent } from './SearchBarComponent/searchbar.component';
 import { SampleDirective } from './sample.directive';
-import { FilterByPipe } from './filter-by.pipe';
+import { FilterByPipe } from './Pipes/filter-by.pipe';
 import { SampleService } from './sample.service';
 
-export * from './array.component';
+export * from './ArrayComponent/array.component';
+export * from './SearchBarComponent/searchbar.component';
 export * from './sample.directive';
-export * from './filter-by.pipe';
+export * from './Pipes/filter-by.pipe';
 export * from './sample.service';
 
 @NgModule({
@@ -16,11 +18,13 @@ export * from './sample.service';
   ],
   declarations: [
     ArrayComponent,
+    SearchBarComponent,
     SampleDirective,
     FilterByPipe
   ],
   exports: [
     ArrayComponent,
+    SearchBarComponent,
     SampleDirective,
     FilterByPipe
   ]

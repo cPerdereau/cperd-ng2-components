@@ -16,13 +16,16 @@ var SearchBarComponent = (function () {
     };
     return SearchBarComponent;
 }());
+__decorate([
+    core_1.Input('placeholder')
+], SearchBarComponent.prototype, "placeholder");
 SearchBarComponent = __decorate([
     core_1.Injectable(),
     core_1.Component({
         selector: 'search-bar-component',
         changeDetection: core_1.ChangeDetectionStrategy.Default,
         styleUrls: ['./searchbar.scss'],
-        template: "\n  <div><i class=\"material-icons\">search</i><input type=\"text\"></div>"
+        template: "\n  <div><i class=\"material-icons\">search</i><input type=\"text\" [placeholder]=\"placeholder\"></div>"
     })
 ], SearchBarComponent);
 exports.SearchBarComponent = SearchBarComponent;

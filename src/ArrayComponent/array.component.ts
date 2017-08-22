@@ -3,6 +3,7 @@ import {ChangeDetectionStrategy, Component, Injectable, Input, OnChanges, OnInit
 @Component({
   selector: 'array-component',
   changeDetection: ChangeDetectionStrategy.Default,
+  styleUrls: ['./array.scss'],
   template: `<h1>{{ title }}</h1>
  <table class="table table-hover">
   <thead>

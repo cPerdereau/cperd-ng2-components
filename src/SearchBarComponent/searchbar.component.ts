@@ -5,7 +5,7 @@ import {ChangeDetectionStrategy, Component, Injectable, OnChanges, OnInit} from 
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrls: ['./searchbar.scss'],
   template: `
-  <div><i class="material-icons">Search</i><input type="text"></div>`
+  <div><i class="material-icons">search</i><input type="text"></div>`
 })
 export class SearchBarComponent implements OnInit, OnChanges {
   constructor() {

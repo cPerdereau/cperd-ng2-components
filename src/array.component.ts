@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit} from '@angular/core';
 
 @Component({
   selector: 'array-component',
+  changeDetection: ChangeDetectionStrategy.Default,
   template: `<h1>{{ title }}</h1>
  <table class="table table-hover">
   <thead>
@@ -16,7 +17,7 @@ import {Component, Input, OnInit} from '@angular/core';
   </tbody>
 </table>`
 })
-export class ArrayComponent implements OnInit {
+export class ArrayComponent implements OnInit, OnChanges {
   @Input('data') data;
   @Input('header') header;
   @Input('title') title;
@@ -26,6 +27,10 @@ export class ArrayComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.props = Object.keys(this.data[0]);
+    this.body = this.data;
+  }
+  ngOnChanges() {
     this.props = Object.keys(this.data[0]);
     this.body = this.data;
   }

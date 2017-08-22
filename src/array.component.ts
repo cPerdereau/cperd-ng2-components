@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit} from '@angular/core';
-
+import {ChangeDetectionStrategy, Component, Injectable, Input, OnChanges, OnInit} from '@angular/core';
+@Injectable()
 @Component({
   selector: 'array-component',
   changeDetection: ChangeDetectionStrategy.Default,
@@ -31,6 +31,7 @@ export class ArrayComponent implements OnInit, OnChanges {
     this.body = this.data;
   }
   ngOnChanges() {
+    console.log('changed');
     this.props = Object.keys(this.data[0]);
     this.body = this.data;
   }

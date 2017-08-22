@@ -23,7 +23,6 @@ export class ArrayComponent implements OnInit {
   body;
   props;
   constructor() {
-    console.log('test');
   }
 
   ngOnInit() {

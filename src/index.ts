@@ -2,12 +2,12 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArrayComponent } from './array.component';
 import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
+import { FilterByPipe } from './filter-by.pipe';
 import { SampleService } from './sample.service';
 
 export * from './array.component';
 export * from './sample.directive';
-export * from './sample.pipe';
+export * from './filter-by.pipe';
 export * from './sample.service';
 
 @NgModule({
@@ -17,12 +17,12 @@ export * from './sample.service';
   declarations: [
     ArrayComponent,
     SampleDirective,
-    SamplePipe
+    FilterByPipe
   ],
   exports: [
     ArrayComponent,
     SampleDirective,
-    SamplePipe
+    FilterByPipe
   ]
 })
 export class SampleModule {

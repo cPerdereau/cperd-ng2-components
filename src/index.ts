@@ -5,6 +5,7 @@ import { SearchBarComponent } from './SearchBarComponent/searchbar.component';
 import { SampleDirective } from './sample.directive';
 import { FilterByPipe } from './Pipes/filter-by.pipe';
 import { SampleService } from './sample.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export * from './ArrayComponent/array.component';
 export * from './SearchBarComponent/searchbar.component';
@@ -14,7 +15,9 @@ export * from './sample.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ArrayComponent,

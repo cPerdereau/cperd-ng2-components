@@ -6,15 +6,21 @@ div{
   align-content: center;
   margin:12px 0;
   i{
-    font-size:2.5rem;
+    font-size:2.8rem;
     color:darkorange;
+    margin-right:12px;
   }
   input{
     font-size:2rem;
+    color:darkorange;
     min-width: 300px;
     background:none;
     outline:none;
     border:none;
     border-bottom:2px solid darkorange;
+    &::placeholder{
+      font-style: italic;
+      color: darkorange
+    }
   }
 }

@@ -4,17 +4,15 @@ import {ChangeDetectionStrategy, Component, Injectable, Input, OnChanges, OnInit
   selector: 'array-component',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrls: ['./array.scss'],
-  template: `<h1>{{ title }}</h1>
+  template: `<h2>{{ title }}</h2>
  <table class="table table-hover">
   <thead>
   <tr>
-    <td *ngIf="indice">Classement</td>
-    <td *ngFor="let content of header">{{ content }}</td>
+    <td *ngIf="indice">Classement</td><td *ngFor="let content of header">{{ content }}</td>
   </thead>
   <tbody>
   <tr *ngFor="let content of body; let i = index">
-    <td *ngIf="indice">{{i+1}}</td>
-    <td *ngFor="let prop of props">{{ content[prop] }}</td>
+    <td *ngIf="indice">{{i+1}}</td><td *ngFor="let prop of props">{{ content[prop] }}</td>
   </tr>
   </tbody>
 </table>`

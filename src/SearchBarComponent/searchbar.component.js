@@ -32,7 +32,7 @@ SearchBarComponent = __decorate([
         selector: 'search-bar-component',
         changeDetection: core_1.ChangeDetectionStrategy.Default,
         styleUrls: ['./searchbar.scss'],
-        /* tslint:disable */ template: "\n  <div><i class=\"material-icons\">search</i><input type=\"text\" [(ngModel)]=\"search\" (keyup)=\"emitValue();\" [placeholder]=\"placeholder\"></div>"
+        /* tslint:disable */ template: "\n  <div><i class=\"material-icons\">search</i><input type=\"text\" [(ngModel)]=\"search\" (keyup)=\"emitValue();\" [placeholder]=\"placeholder ? placeholder : 'Recherche'\"></div>"
         /* tslint:enable */
     })
 ], SearchBarComponent);

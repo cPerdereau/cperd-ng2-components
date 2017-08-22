@@ -8,7 +8,7 @@ import {
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrls: ['./searchbar.scss'],
   /* tslint:disable */ template: `
-  <div><i class="material-icons">search</i><input type="text" [(ngModel)]="search" (keyup)="emitValue();" [placeholder]="placeholder"></div>`
+  <div><i class="material-icons">search</i><input type="text" [(ngModel)]="search" (keyup)="emitValue();" [placeholder]="placeholder ? placeholder : 'Recherche'"></div>`
   /* tslint:enable */
 })
 export class SearchBarComponent implements OnInit, OnChanges {

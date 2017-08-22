@@ -13,6 +13,9 @@ var ArrayComponent = (function () {
     ArrayComponent.prototype.ngOnInit = function () {
         this.props = Object.keys(this.data[0]);
         this.body = this.data;
+        if (this.indice !== true) {
+            this.indice = false;
+        }
     };
     ArrayComponent.prototype.ngOnChanges = function () {
         this.body = this.data;

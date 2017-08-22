@@ -19,15 +19,17 @@ export class FilterByPipe implements PipeTransform {
     for (let i = 0; i < items.length; i++) {
       let check = 0;
       for (let j = 0; j < props.length; j++) {
+        console.log(items[i][props[j]]);
         // newArray.push(items[i][props[j]]);
-        if (items[i][props[j]].toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+       /* if (items[i][props[j]].toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
           check++;
-        }
+        }*/
       }
-      if (check > 0) {
+      /*if (check > 0) {
         newArray.push(items[i]);
-      }
+      }*/
     }
-    return newArray;
+    return items;
+    // return newArray;
   }
 }

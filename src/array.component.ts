@@ -31,7 +31,6 @@ export class ArrayComponent implements OnInit, OnChanges {
     this.body = this.data;
   }
   ngOnChanges() {
-    this.props = Object.keys(this.data[0]);
     this.body = this.data;
   }
 }

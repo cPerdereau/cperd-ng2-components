@@ -9,23 +9,31 @@ exports.__esModule = true;
 var core_1 = require("@angular/core");
 var SearchBarComponent = (function () {
     function SearchBarComponent() {
+        this.output = new core_1.EventEmitter();
     }
     SearchBarComponent.prototype.ngOnInit = function () {
     };
     SearchBarComponent.prototype.ngOnChanges = function () {
+    };
+    SearchBarComponent.prototype.emitValue = function () {
+        this.output.emit(this.search);
     };
     return SearchBarComponent;
 }());
 __decorate([
     core_1.Input('placeholder')
 ], SearchBarComponent.prototype, "placeholder");
+__decorate([
+    core_1.Output()
+], SearchBarComponent.prototype, "output");
 SearchBarComponent = __decorate([
     core_1.Injectable(),
     core_1.Component({
         selector: 'search-bar-component',
         changeDetection: core_1.ChangeDetectionStrategy.Default,
         styleUrls: ['./searchbar.scss'],
-        template: "\n  <div><i class=\"material-icons\">search</i><input type=\"text\" [placeholder]=\"placeholder\"></div>"
+        /* tslint:disable */ template: "\n  <div><i class=\"material-icons\">search</i><input type=\"text\" [(ngModel)]=\"search\" (keyup)=\"emitValue();\" [placeholder]=\"placeholder\"></div>"
+        /* tslint:enable */
     })
 ], SearchBarComponent);
 exports.SearchBarComponent = SearchBarComponent;

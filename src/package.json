@@ -1,0 +1,28 @@
+{
+  "name": "cperd-ng2-components",
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cPerdereau/cperd-ng2-components"
+  },
+  "author": {
+    "name": "Clement Perdereau",
+    "email": "c.perdereau@okservice.fr"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cPerdereau/cperd-ng2-components/issues"
+  },
+  "main": "cperd-ng2-components.umd.js",
+  "module": "cperd-ng2-components.js",
+  "jsnext:main": "cperd-ng2-components.js",
+  "typings": "cperd-ng2-components.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}

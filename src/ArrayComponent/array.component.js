@@ -28,13 +28,16 @@ __decorate([
 __decorate([
     core_1.Input('title')
 ], ArrayComponent.prototype, "title");
+__decorate([
+    core_1.Input('indice')
+], ArrayComponent.prototype, "indice");
 ArrayComponent = __decorate([
     core_1.Injectable(),
     core_1.Component({
         selector: 'array-component',
         changeDetection: core_1.ChangeDetectionStrategy.Default,
         styleUrls: ['./array.scss'],
-        template: "<h1>{{ title }}</h1>\n <table class=\"table table-hover\">\n  <thead>\n  <tr>\n    <td *ngFor=\"let content of header\">{{ content }}</td>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let content of body; let i = index\">\n    <td>{{i+1}}</td>\n    <td *ngFor=\"let prop of props\">{{ content[prop] }}</td>\n  </tr>\n  </tbody>\n</table>"
+        template: "<h1>{{ title }}</h1>\n <table class=\"table table-hover\">\n  <thead>\n  <tr>\n    <td *ngIf=\"indice\">Classement</td>\n    <td *ngFor=\"let content of header\">{{ content }}</td>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let content of body; let i = index\">\n    <td *ngIf=\"indice\">{{i+1}}</td>\n    <td *ngFor=\"let prop of props\">{{ content[prop] }}</td>\n  </tr>\n  </tbody>\n</table>"
     })
 ], ArrayComponent);
 exports.ArrayComponent = ArrayComponent;

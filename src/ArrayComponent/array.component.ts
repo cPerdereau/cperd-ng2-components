@@ -8,11 +8,12 @@ import {ChangeDetectionStrategy, Component, Injectable, Input, OnChanges, OnInit
  <table class="table table-hover">
   <thead>
   <tr>
+    <td *ngIf="indice">Classement</td>
     <td *ngFor="let content of header">{{ content }}</td>
   </thead>
   <tbody>
   <tr *ngFor="let content of body; let i = index">
-    <td>{{i+1}}</td>
+    <td *ngIf="indice">{{i+1}}</td>
     <td *ngFor="let prop of props">{{ content[prop] }}</td>
   </tr>
   </tbody>
@@ -22,6 +23,7 @@ export class ArrayComponent implements OnInit, OnChanges {
   @Input('data') data;
   @Input('header') header;
   @Input('title') title;
+  @Input('indice') indice;
   body;
   props;
   constructor() {

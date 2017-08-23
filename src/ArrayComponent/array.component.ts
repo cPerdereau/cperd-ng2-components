@@ -4,7 +4,7 @@ import {ChangeDetectionStrategy, Component, Injectable, Input, OnChanges, OnInit
   selector: 'array-component',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrls: ['./array.scss'],
-  template: `<h2>{{ title }}</h2>
+  template: `<div><h2>{{ title }}</h2>
  <table class="table table-hover">
   <thead>
   <tr>
@@ -15,12 +15,12 @@ import {ChangeDetectionStrategy, Component, Injectable, Input, OnChanges, OnInit
     <td *ngIf="indice">{{i+1}}</td><td *ngFor="let prop of props">{{ content[prop] }}</td>
   </tr>
   </tbody>
-</table>`
+</table></div>`
 })
 export class ArrayComponent implements OnInit, OnChanges {
   @Input('data') data;
   @Input('header') header;
-  @Input('title') title;
+  @Input('title') title = 'Titre de la page';
   @Input('indice') indice;
   body;
   props;

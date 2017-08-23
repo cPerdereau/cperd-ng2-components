@@ -9,6 +9,7 @@ exports.__esModule = true;
 var core_1 = require("@angular/core");
 var ArrayComponent = (function () {
     function ArrayComponent() {
+        this.title = 'Titre de la page';
     }
     ArrayComponent.prototype.ngOnInit = function () {
         this.props = Object.keys(this.data[0]);
@@ -40,7 +41,7 @@ ArrayComponent = __decorate([
         selector: 'array-component',
         changeDetection: core_1.ChangeDetectionStrategy.Default,
         styleUrls: ['./array.scss'],
-        template: "<h2>{{ title }}</h2>\n <table class=\"table table-hover\">\n  <thead>\n  <tr>\n    <td *ngIf=\"indice\">Classement</td><td *ngFor=\"let content of header\">{{ content }}</td>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let content of body; let i = index\">\n    <td *ngIf=\"indice\">{{i+1}}</td><td *ngFor=\"let prop of props\">{{ content[prop] }}</td>\n  </tr>\n  </tbody>\n</table>"
+        template: "<div><h2>{{ title }}</h2>\n <table class=\"table table-hover\">\n  <thead>\n  <tr>\n    <td *ngIf=\"indice\">Classement</td><td *ngFor=\"let content of header\">{{ content }}</td>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let content of body; let i = index\">\n    <td *ngIf=\"indice\">{{i+1}}</td><td *ngFor=\"let prop of props\">{{ content[prop] }}</td>\n  </tr>\n  </tbody>\n</table></div>"
     })
 ], ArrayComponent);
 exports.ArrayComponent = ArrayComponent;

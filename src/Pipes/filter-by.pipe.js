@@ -13,9 +13,25 @@ var core_1 = require("@angular/core");
 var FilterByPipe = (function () {
     function FilterByPipe() {
     }
-    FilterByPipe.prototype.transform = function (items, filter) {
+    FilterByPipe.prototype.transform = function (items, filter, properties) {
         if (!items || !filter) {
             return items;
+        }
+        if (properties.length > 0) {
+            var newArray_1 = [];
+            for (var i = 0; i < items.length; i++) {
+                var check = 0;
+                for (var j = 0; j < properties.length; j++) {
+                    var val = items[i][properties[j]];
+                    if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+                        check++;
+                    }
+                }
+                if (check > 0) {
+                    newArray_1.push(items[i]);
+                }
+            }
+            return newArray_1;
         }
         var props = Object.keys(items[0]);
         var newArray = [];

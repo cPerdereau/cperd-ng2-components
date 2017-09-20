@@ -18,8 +18,10 @@ export class FilterByPipe implements PipeTransform {
       let check = 0;
       for (let j = 0; j < props.length; j++) {
         let val = items[i][props[j]];
-        if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
-          check++;
+        if (!(typeof val === 'object') && !Array.isArray(val)) {
+          if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+            check++;
+          }
         }
       }
       if (check > 0) {

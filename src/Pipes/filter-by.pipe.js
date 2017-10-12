@@ -20,18 +20,19 @@ var FilterByPipe = (function () {
         }
         var props = Object.keys(items[0]);
         var newArray = [];
+        console.log(items, filter, prop);
         for (var i = 0; i < items.length; i++) {
             var check = 0;
-            for (var j = 0; j < props.length; j++) {
-                if (prop != null || prop === '') {
-                    var val = items[i][prop];
-                    if (!(typeof val === 'object') && !Array.isArray(val)) {
-                        if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
-                            check++;
-                        }
+            if (prop != null || prop === '') {
+                var val = items[i][prop];
+                if (!(typeof val === 'object') && !Array.isArray(val)) {
+                    if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+                        check++;
                     }
                 }
-                else {
+            }
+            else {
+                for (var j = 0; j < props.length; j++) {
                     var val = items[i][props[j]];
                     if (!(typeof val === 'object') && !Array.isArray(val)) {
                         if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {

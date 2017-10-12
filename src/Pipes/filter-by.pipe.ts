@@ -14,17 +14,18 @@ export class FilterByPipe implements PipeTransform {
     }
     let props = Object.keys(items[0]);
     let newArray = [];
+    console.log(items, filter, prop);
     for (let i = 0; i < items.length; i++) {
       let check = 0;
-      for (let j = 0; j < props.length; j++) {
-        if (prop != null || prop === '') {
-          let val = items[i][prop];
-          if (!(typeof val === 'object') && !Array.isArray(val)) {
-            if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
-              check++;
-            }
+      if (prop != null || prop === '') {
+        let val = items[i][prop];
+        if (!(typeof val === 'object') && !Array.isArray(val)) {
+          if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+            check++;
           }
-        } else {
+        }
+      } else {
+        for (let j = 0; j < props.length; j++) {
           let val = items[i][props[j]];
           if (!(typeof val === 'object') && !Array.isArray(val)) {
             if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {

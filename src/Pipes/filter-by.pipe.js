@@ -20,7 +20,6 @@ var FilterByPipe = (function () {
         }
         var props = Object.keys(items[0]);
         var newArray = [];
-        console.log(items, filter, prop);
         for (var i = 0; i < items.length; i++) {
             var check = 0;
             if (prop != null || prop !== '') {

@@ -23,7 +23,7 @@ var FilterByPipe = (function () {
         for (var i = 0; i < items.length; i++) {
             var check = 0;
             for (var j = 0; j < props.length; j++) {
-                if (prop != null) {
+                if (prop != null || prop === '') {
                     var val = items[i][prop];
                     if (!(typeof val === 'object') && !Array.isArray(val)) {
                         if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {

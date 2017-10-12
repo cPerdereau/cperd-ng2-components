@@ -8,7 +8,7 @@ import { Injectable, PipeTransform, Pipe } from '@angular/core';
 })
 @Injectable()
 export class FilterByPipe implements PipeTransform {
-  transform(items: any[], filter): any {
+  transform(items: any[], filter, prop = null): any {
     if (!items || !filter) {
       return items;
     }
@@ -17,10 +17,19 @@ export class FilterByPipe implements PipeTransform {
     for (let i = 0; i < items.length; i++) {
       let check = 0;
       for (let j = 0; j < props.length; j++) {
-        let val = items[i][props[j]];
-        if (!(typeof val === 'object') && !Array.isArray(val)) {
-          if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
-            check++;
+        if (prop != null) {
+          let val = items[i][prop];
+          if (!(typeof val === 'object') && !Array.isArray(val)) {
+            if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+              check++;
+            }
+          }
+        } else {
+          let val = items[i][props[j]];
+          if (!(typeof val === 'object') && !Array.isArray(val)) {
+            if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+              check++;
+            }
           }
         }
       }

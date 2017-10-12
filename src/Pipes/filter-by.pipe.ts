@@ -17,7 +17,7 @@ export class FilterByPipe implements PipeTransform {
     console.log(items, filter, prop);
     for (let i = 0; i < items.length; i++) {
       let check = 0;
-      if (prop != null || prop === '') {
+      if (prop != null || prop !== '') {
         let val = items[i][prop];
         if (!(typeof val === 'object') && !Array.isArray(val)) {
           if (val.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
